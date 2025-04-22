@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np
-import re
 from datetime import datetime
-import os
 from reader import Reader
 
 class Processor:
@@ -10,8 +8,6 @@ class Processor:
     def __init__(self):
         reader = Reader()
         self.data = reader.load_data()
-        non_mandatory = ['Suite/Condo #', 'Owner Name', 'Address', 'City', 'State', 'Tax District', 'image', 'Foundation Type', 'Exterior Wall', 'Grade']
-        self.mandatory_columns = [col for col in self.data.columns if col not in non_mandatory]
     
     # Remove all rows containing a missing value in a mandatory column.    
     def remove_rows_with_missing_mandatory_values(self):
