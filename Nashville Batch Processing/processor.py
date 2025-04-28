@@ -11,7 +11,14 @@ class Processor:
     
     # Remove all rows containing a missing value in a mandatory column.    
     def remove_rows_with_missing_mandatory_values(self):
-        self.data = self.data.dropna(subset=['Land Value'])
+        mandatory_columns = ['Land Value']
+        missing_values = self.data[mandatory_columns].isnull().any(axis=1)
+        
+        if missing_values.any():
+            missing_indices = self.data[missing_values].index.tolist()
+            raise ValueError(f"Missing values found in mandatory columns at rows: {missing_indices}")
+        
+        self.data = self.data.dropna(subset=mandatory_columns)
         return self
         
     # Remove columns 'image', 'Sold As Vacant' and 'Multiple Parcels Involved in Sale'.
@@ -112,3 +119,4 @@ if __name__ == "__main__":
     processor = Processor()
     processor.process()
     processed_data = processor.get_processed_data()
+    print(processed_data.info())
