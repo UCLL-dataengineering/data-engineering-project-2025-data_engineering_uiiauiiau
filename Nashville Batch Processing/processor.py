@@ -8,17 +8,24 @@ class Processor:
     def __init__(self):
         reader = Reader()
         self.data = reader.load_data()
-    
+        
     # Remove all rows containing a missing value in a mandatory column.    
     def remove_rows_with_missing_mandatory_values(self):
-        mandatory_columns = ['Land Value']
+        #Non-mandatory columns: ‘Suite/Condo’, ‘Owner Name’, ‘Adress’, ‘City’, ‘State’, ‘Tax District’,
+        #‘Image’, ‘Foundation Type’, ‘Exterior Wall’, ‘Grade’
+        mandatory_columns = ['Parcel ID', 'Land Use', 'Property Address', 'Property City',
+                              'Sale Date', 'Sale Price', 'Legal Reference', 'Sold As Vacant', 'Multiple Parcels Involved in Sale'
+                              , 'Acreage', 'Neighborhood', 'Land Value',
+                                  'Building Value', 'Total Value', 'Finished Area', 'Year Built', 'Bedrooms', 'Full Bath', 'Half Bath']
+        self.data = self.data.dropna(subset=mandatory_columns)
         missing_values = self.data[mandatory_columns].isnull().any(axis=1)
+
+        
         
         if missing_values.any():
             missing_indices = self.data[missing_values].index.tolist()
             raise ValueError(f"Missing values found in mandatory columns at rows: {missing_indices}")
         
-        self.data = self.data.dropna(subset=mandatory_columns)
         return self
         
     # Remove columns 'image', 'Sold As Vacant' and 'Multiple Parcels Involved in Sale'.

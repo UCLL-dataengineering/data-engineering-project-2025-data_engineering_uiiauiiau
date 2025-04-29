@@ -16,22 +16,11 @@ class Validator:
             'validation_errors': []
         }
         
-        # Define valid values for categorical fields
-        self.valid_foundation_types = ['SLAB', 'PT BSMT', 'FULL BSMT', 'CRAWL', 'BASEMENT', 'PIER', 'OTHER']
-        
-        self.valid_exterior_walls = ['BRICK', 'FRAME', 'VINYL', 'BRICK/FRAME', 'STUCCO', 'STONE', 'SIDING', 'CONCRETE', 'OTHER']
-        
-        self.valid_grades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F']
-        
         # Define non-mandatory columns that won't trigger errors when missing
         self.non_mandatory_columns = [
             'Suite/ Condo   #', 'Owner Name', 'Address', 'City', 'State', 
             'Tax District', 'Foundation Type', 'Exterior Wall', 'Grade'
         ]
-    
-    def load_data(self, data):
-        self.data = data
-        return self
     
     def validate_dataset(self):
         if self.data is None:
@@ -84,7 +73,7 @@ class Validator:
         if pd.notna(record.get('State')):
             if not isinstance(record['State'], str):
                 errors.append(f"Record {index}: State should be a string")
-            elif len(record['State']) != 2:  # Assuming 2-letter state codes
+            elif len(record['State']) != 2:  # 2-letter state codes
                 errors.append(f"Record {index}: State should be a 2-letter code")
         
         # Validate Tax District (non-mandatory)
@@ -97,16 +86,18 @@ class Validator:
             if not isinstance(record['Foundation Type'], str):
                 errors.append(f"Record {index}: Foundation Type should be a string")
             # Check if the value is valid (case-insensitive)
-            elif not any(valid.upper() == record['Foundation Type'].strip().upper() for valid in self.valid_foundation_types):
-                errors.append(f"Record {index}: Foundation Type '{record['Foundation Type']}' is invalid")
+            elif not re.fullmatch(r'[A-Z ]+', record['Foundation Type'].strip()):
+                errors.append(f"Record {index}: Foundation Type '{record['Foundation Type']}' is invalid (must contain only uppercase letters and spaces)")
+
         
         # Validate Exterior Wall (non-mandatory)
         if pd.notna(record.get('Exterior Wall')):
             if not isinstance(record['Exterior Wall'], str):
                 errors.append(f"Record {index}: Exterior Wall should be a string")
             # Check if the value is valid (case-insensitive)
-            elif not any(valid.upper() == record['Exterior Wall'].strip().upper() for valid in self.valid_exterior_walls):
-                errors.append(f"Record {index}: Exterior Wall '{record['Exterior Wall']}' is invalid")
+            elif not re.fullmatch(r'[A-Z/ ]+', record['Exterior Wall'].strip()):
+                errors.append(f"Record {index}: Exterior Wall '{record['Exterior Wall']}' is invalid (must contain only uppercase letters, spaces, or slashes)")
+
         
         # Validate Grade (non-mandatory)
         if pd.notna(record.get('Grade')):
@@ -115,14 +106,9 @@ class Validator:
             else:
                 # Handle grades with spaces (e.g., 'B   ')
                 grade_clean = record['Grade'].strip()
-                if grade_clean not in self.valid_grades:
-                    errors.append(f"Record {index}: Grade '{record['Grade']}' is invalid")
-        
-        # Validate mandatory fields needed for processor
-        # Based on the processor code, 'Land Value' is used in a drop operation and crucial calculations
-        
-        if pd.isna(record.get('Land Value')):
-            errors.append(f"Record {index}: Mandatory field 'Land Value' is missing")
+                if not re.fullmatch(r'[A-Z][+-]?', grade_clean):
+                    errors.append(f"Record {index}: Grade '{record['Grade']}' is invalid (must be a single uppercase letter optionally followed by + or -)")
+
             
         # Validate fields used in calculations (if present)
         
@@ -186,14 +172,13 @@ class Validator:
 
 # Example usage
 if __name__ == "__main__":
-    
     # Example usage with reader
-    reader = Reader('input/Nashville_housing_data_2013_2016.csv')
+    reader = Reader()
     data = reader.load_data()
     
     # Initialize validator and validate data
-    validator = Validator()
-    validator.load_data(data).validate_dataset()
+    validator = Validator(data)
+    validator.validate_dataset()
     
     # Print validation summary
     print("Validation Summary:")
@@ -202,11 +187,11 @@ if __name__ == "__main__":
     # Print the first 5 validation errors if any
     errors = validator.get_validation_results()['validation_errors']
     if errors:
-        print("\nSample validation errors (first 5):")
-        for i, error in enumerate(errors[:5]):
+        print("\nSample validation errors (first 10):")
+        for i, error in enumerate(errors[:10]):
             print(error)
-        if len(errors) > 5:
-            print(f"...and {len(errors) - 5} more errors")
+        if len(errors) > 10:
+            print(f"...and {len(errors) - 10} more errors")
     
     # Get validated data for processing
     validated_data = validator.get_validated_data()
