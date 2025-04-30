@@ -21,6 +21,16 @@ class Validator:
             'Suite/ Condo   #', 'Owner Name', 'Address', 'City', 'State', 
             'Tax District', 'Foundation Type', 'Exterior Wall', 'Grade'
         ]
+
+        # Define mandatory columns that will trigger errors when missing
+        self.mandatory_columns = [
+            'Parcel ID', 'Land Use', 'Property Address', 'Property City',
+            'Sale Date', 'Sale Price', 'Legal Reference',
+            'Sold As Vacant', 'Multiple Parcels Involved in Sale',
+            'Acreage', 'Neighborhood', 'Land Value',
+            'Building Value', 'Total Value', 'Finished Area',
+            'Year Built', 'Bedrooms', 'Full Bath', 'Half Bath'
+        ]
     
     def validate_dataset(self):
         if self.data is None:
@@ -46,6 +56,12 @@ class Validator:
     
     def _validate_record(self, record, index):
         errors = []
+
+        # Check that mandatory columns have non-null and non-empty values
+        for col in self.mandatory_columns:
+            value = record.get(col)
+            if pd.isna(value) or (isinstance(value, str) and not value.strip()):
+                errors.append(f"Record {index}: Mandatory field '{col}' is missing or empty")
         
         # Non-mandatory field validations
         
@@ -151,6 +167,84 @@ class Validator:
                     errors.append(f"Record {index}: Building Value is zero (potential division by zero in ratio)")
             except (ValueError, TypeError):
                 errors.append(f"Record {index}: Building Value should be numeric")
+
+        # Validate Unnamed: 0
+        if pd.notna(record.get('Unnamed: 0')):
+            if not isinstance(record['Unnamed: 0'], (int, float)):
+                errors.append(f"Record {index}: Unnamed: 0 should be numeric")
+        
+        # Parcel ID
+        if pd.notna(record.get('Parcel ID')):
+            if not isinstance(record['Parcel ID'], str) or not record['Parcel ID'].strip():
+                errors.append(f"Record {index}: Parcel ID must be a non-empty string")
+
+        # Land Use
+        if pd.notna(record.get('Land Use')):
+            if not isinstance(record['Land Use'], str) or not record['Land Use'].strip():
+                errors.append(f"Record {index}: Land Use must be a non-empty string")
+
+        # Property Address
+        if pd.notna(record.get('Property Address')):
+            if not isinstance(record['Property Address'], str):
+                errors.append(f"Record {index}: Property Address should be a string")
+        
+        # Property City
+        if pd.notna(record.get('Property City')):
+            if not isinstance(record['Property City'], str):
+                errors.append(f"Record {index}: Property City should be a string")
+        
+        # Legal Reference
+        if pd.notna(record.get('Legal Reference')):
+            if not isinstance(record['Legal Reference'], str):
+                errors.append(f"Record {index}: Legal Reference should be a string")
+        
+        # Sold As Vacant
+        if pd.notna(record.get('Sold As Vacant')):
+            if record['Sold As Vacant'] not in ['Yes', 'No']:
+                errors.append(f"Record {index}: Sold As Vacant must be 'Yes' or 'No'")
+        
+        # Multiple Parcels Involved in Sale
+        if pd.notna(record.get('Multiple Parcels Involved in Sale')):
+            if record['Multiple Parcels Involved in Sale'] not in ['Yes', 'No']:
+                errors.append(f"Record {index}: Multiple Parcels must be 'Yes' or 'No'")
+
+        # Acreage
+        if pd.notna(record.get('Acreage')):
+            try:
+                if float(record['Acreage']) < 0:
+                    errors.append(f"Record {index}: Acreage cannot be negative")
+            except:
+                errors.append(f"Record {index}: Acreage should be numeric")
+        
+        # Neighborhood
+        if pd.notna(record.get('Neighborhood')):
+            if not isinstance(record['Neighborhood'], (int, float)):
+                errors.append(f"Record {index}: Neighborhood should be numeric")
+
+        # Image
+        if pd.notna(record.get('image')):
+            if not isinstance(record['image'], str):
+                errors.append(f"Record {index}: image should be a string")
+
+        # Land Value, Total Value
+        for field in ['Land Value', 'Total Value']:
+            if pd.notna(record.get(field)):
+                try:
+                    if float(record[field]) < 0:
+                        errors.append(f"Record {index}: {field} must be non-negative")
+                except:
+                    errors.append(f"Record {index}: {field} should be numeric")
+
+        # Bedrooms, Full Bath, Half Bath
+        for field in ['Bedrooms', 'Full Bath', 'Half Bath']:
+            if pd.notna(record.get(field)):
+                try:
+                    val = float(record[field])
+                    if val < 0 or not val.is_integer():
+                        errors.append(f"Record {index}: {field} must be a non-negative integer")
+                except:
+                    errors.append(f"Record {index}: {field} should be numeric")
+
                 
         return errors
 
