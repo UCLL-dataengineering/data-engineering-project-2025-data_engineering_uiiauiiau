@@ -24,7 +24,7 @@ class Writer:
 
 if __name__ == "__main__":
     processor = Processor()
-    processed_data = processor.process().get_processed_data()
+    processed_data = processor.get_processed_data()
     
-    writer = Writer("DefaultEndpointsProtocol=https;AccountName=uiiauiiau;AccountKey=ZxKBlPoSrGjlXyHwFUQLe1l7Ps74FVGs4j27S2QBCeOtYnGO+be0020Krs37xlOFMaXiGQN23s4++ASt+O0Tpg==;EndpointSuffix=core.windows.net", "nashville")
+    writer = Writer("DefaultEndpointsProtocol=https;AccountName=uiiauiiau;AccountKey=ZxKBlPoSrGjlXyHwFUQLe1l7Ps74FVGs4j27S2QBCeOtYnGO+be0020Krs37xlOFMaXiGQN23s4++ASt+O0Tpg==;EndpointSuffix=core.windows.net", "weather")
     writer.write(processed_data, "processed_weather.csv", 'Weather Real-Time Processing/output/processed_weather.csv')
