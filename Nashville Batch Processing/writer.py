@@ -8,10 +8,9 @@ from processor import Processor
 # - Writes to the local /output folder.
 # - Writes to Azure Blog Storage.
 class Writer:
-    def __init__(self, connection_string, container_name, local_output_folder):
+    def __init__(self, connection_string, container_name):
         self.connection_string = connection_string
         self.container_name = container_name
-        self.local_output_folder = local_output_folder
         self.blob_service_client = BlobServiceClient.from_connection_string(self.connection_string)
 
     def write(self, df: pd.DataFrame, filename, output_path):     
@@ -27,5 +26,5 @@ if __name__ == "__main__":
     processor = Processor()
     processed_data = processor.process().get_processed_data()
     
-    writer = Writer("DefaultEndpointsProtocol=https;AccountName=uiiauiiau;AccountKey=ZxKBlPoSrGjlXyHwFUQLe1l7Ps74FVGs4j27S2QBCeOtYnGO+be0020Krs37xlOFMaXiGQN23s4++ASt+O0Tpg==;EndpointSuffix=core.windows.net", "nashville", "Nashville Batch Processing/output")
+    writer = Writer("DefaultEndpointsProtocol=https;AccountName=uiiauiiau;AccountKey=ZxKBlPoSrGjlXyHwFUQLe1l7Ps74FVGs4j27S2QBCeOtYnGO+be0020Krs37xlOFMaXiGQN23s4++ASt+O0Tpg==;EndpointSuffix=core.windows.net", "nashville")
     writer.write(processed_data, "processed_nashville_housing.csv", 'Nashville Batch Processing/output/processed_nashville_housing.csv')

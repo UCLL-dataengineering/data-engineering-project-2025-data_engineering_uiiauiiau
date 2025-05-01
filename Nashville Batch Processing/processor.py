@@ -2,16 +2,50 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from reader import Reader
+from validator import Validator 
 
 class Processor:
     
     def __init__(self):
         reader = Reader()
         self.data = reader.load_data()
-    
+
+         # Validate the data before processing
+        validator = Validator(self.data)
+        validator.validate_dataset()
+        
+        # Print validation summary
+        print("Validation Summary:")
+        print(validator.get_validation_summary())
+        
+        # If there are validation errors, raise an exception
+        errors = validator.get_validation_results()['validation_errors']
+        if errors:
+            print("\nValidation errors found:")
+            for error in errors[:10]:  # Show the first 10 errors
+                print(error)
+            if len(errors) > 10:
+                print(f"...and {len(errors) - 10} more errors")
+            raise ValueError("Validation failed. Please fix the errors before processing.")
+        
+        
     # Remove all rows containing a missing value in a mandatory column.    
     def remove_rows_with_missing_mandatory_values(self):
-        self.data = self.data.dropna(subset=['Land Value'])
+        #Non-mandatory columns: ‘Suite/Condo’, ‘Owner Name’, ‘Adress’, ‘City’, ‘State’, ‘Tax District’,
+        #‘Image’, ‘Foundation Type’, ‘Exterior Wall’, ‘Grade’
+        mandatory_columns = ['Parcel ID', 'Land Use', 'Property Address', 'Property City',
+                              'Sale Date', 'Sale Price', 'Legal Reference', 'Sold As Vacant', 'Multiple Parcels Involved in Sale'
+                              , 'Acreage', 'Neighborhood', 'Land Value',
+                                  'Building Value', 'Total Value', 'Finished Area', 'Year Built', 'Bedrooms', 'Full Bath', 'Half Bath']
+        self.data = self.data.dropna(subset=mandatory_columns)
+        missing_values = self.data[mandatory_columns].isnull().any(axis=1)
+
+        
+        
+        if missing_values.any():
+            missing_indices = self.data[missing_values].index.tolist()
+            raise ValueError(f"Missing values found in mandatory columns at rows: {missing_indices}")
+        
         return self
         
     # Remove columns 'image', 'Sold As Vacant' and 'Multiple Parcels Involved in Sale'.
@@ -106,9 +140,13 @@ class Processor:
     # To show the processed data.   
     def get_processed_data(self):
         return self.data
-
+    
 # Execute the processing steps when run as a script
 if __name__ == "__main__":
-    processor = Processor()
-    processor.process()
-    processed_data = processor.get_processed_data()
+    try:
+        processor = Processor()
+        processor.process()
+        processed_data = processor.get_processed_data()
+        print(processed_data.info())
+    except ValueError as e:
+        print(f"Processing terminated: {e}")
