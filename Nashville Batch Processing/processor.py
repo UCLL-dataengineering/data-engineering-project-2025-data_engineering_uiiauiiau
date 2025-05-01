@@ -2,12 +2,32 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from reader import Reader
+from validator import Validator 
 
 class Processor:
     
     def __init__(self):
         reader = Reader()
         self.data = reader.load_data()
+
+         # Validate the data before processing
+        validator = Validator(self.data)
+        validator.validate_dataset()
+        
+        # Print validation summary
+        print("Validation Summary:")
+        print(validator.get_validation_summary())
+        
+        # If there are validation errors, raise an exception
+        errors = validator.get_validation_results()['validation_errors']
+        if errors:
+            print("\nValidation errors found:")
+            for error in errors[:10]:  # Show the first 10 errors
+                print(error)
+            if len(errors) > 10:
+                print(f"...and {len(errors) - 10} more errors")
+            raise ValueError("Validation failed. Please fix the errors before processing.")
+        
         
     # Remove all rows containing a missing value in a mandatory column.    
     def remove_rows_with_missing_mandatory_values(self):
@@ -120,10 +140,13 @@ class Processor:
     # To show the processed data.   
     def get_processed_data(self):
         return self.data
-
+    
 # Execute the processing steps when run as a script
 if __name__ == "__main__":
-    processor = Processor()
-    processor.process()
-    processed_data = processor.get_processed_data()
-    print(processed_data.info())
+    try:
+        processor = Processor()
+        processor.process()
+        processed_data = processor.get_processed_data()
+        print(processed_data.info())
+    except ValueError as e:
+        print(f"Processing terminated: {e}")
