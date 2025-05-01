@@ -8,7 +8,6 @@ from validator import Validator
 class Processor:
     
     def __init__(self, proceed_with_errors=False):
-        """Initialize the processor by reading and validating data"""
         self.data = Reader.read_last_file()
         if self.data is None:
             raise FileNotFoundError("No file found in the input directory.")

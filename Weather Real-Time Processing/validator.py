@@ -155,7 +155,6 @@ class Validator:
         return self.errors
 
     def summary(self):
-        """Return a summary of validation results"""
         total = len(self.data)
         invalid = len(self.error_rows)
         return {
