@@ -2491,3 +2491,466 @@ File Path                       PID    Runtime      # DAGs    # Errors  Last Run
 /opt/airflow/dags/reader.py                              0           0  0.25s           2025-05-02T15:39:27                       3
 ================================================================================
 [2025-05-02T15:39:47.571+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-03T12:58:51.641+0000] {manager.py:483} INFO - Processing files using up to 2 processes at a time 
+[2025-05-03T12:58:51.643+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-05-03T12:58:51.644+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-03T12:58:51.646+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-05-03T12:58:52.079+0000] {manager.py:824} INFO - There are 3 files in /opt/airflow/dags
+[2025-05-03T12:58:52.316+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run      Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  ----------  ----------------------
+/opt/airflow/dags/main.py          62  0.07s             0           0                                                   0
+/opt/airflow/dags/nashville.py     61  0.11s             0           0                                                   0
+/opt/airflow/dags/reader.py                              0           0                                                   0
+================================================================================
+[2025-05-03T12:59:23.054+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  3.41s           2025-05-03T12:58:55                      12
+/opt/airflow/dags/main.py                                0           0  3.12s           2025-05-03T12:58:55                       3
+/opt/airflow/dags/reader.py                              0           0  2.01s           2025-05-03T12:58:57                       3
+================================================================================
+[2025-05-03T12:59:53.162+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.93s           2025-05-03T12:59:27                      12
+/opt/airflow/dags/main.py                                0           0  0.78s           2025-05-03T12:59:26                       3
+/opt/airflow/dags/reader.py                              0           0  0.67s           2025-05-03T12:59:28                       3
+================================================================================
+[2025-05-03T13:00:23.718+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.47s           2025-05-03T12:59:58                      12
+/opt/airflow/dags/main.py                                0           0  1.29s           2025-05-03T12:59:58                       3
+/opt/airflow/dags/reader.py                              0           0  0.64s           2025-05-03T12:59:59                       3
+================================================================================
+[2025-05-03T13:00:54.579+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.97s           2025-05-03T13:00:29                      12
+/opt/airflow/dags/main.py                                0           0  0.86s           2025-05-03T13:00:29                       3
+/opt/airflow/dags/reader.py                              0           0  0.56s           2025-05-03T13:00:30                       3
+================================================================================
+[2025-05-03T13:01:24.614+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.14s           2025-05-03T13:01:01                      12
+/opt/airflow/dags/main.py                                0           0  0.85s           2025-05-03T13:01:01                       3
+/opt/airflow/dags/reader.py                              0           0  0.55s           2025-05-03T13:01:02                       3
+================================================================================
+[2025-05-03T13:01:55.034+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.22s           2025-05-03T13:01:33                      12
+/opt/airflow/dags/main.py                                0           0  1.15s           2025-05-03T13:01:33                       3
+/opt/airflow/dags/reader.py                              0           0  0.59s           2025-05-03T13:01:34                       3
+================================================================================
+[2025-05-03T13:02:25.577+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.84s           2025-05-03T13:02:05                      12
+/opt/airflow/dags/reader.py                              0           0  0.80s           2025-05-03T13:02:06                       3
+/opt/airflow/dags/main.py                                0           0  0.75s           2025-05-03T13:02:05                       3
+================================================================================
+[2025-05-03T13:02:55.695+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.21s           2025-05-03T13:02:37                      12
+/opt/airflow/dags/main.py                                0           0  0.94s           2025-05-03T13:02:37                       3
+/opt/airflow/dags/reader.py                              0           0  0.62s           2025-05-03T13:02:37                       3
+================================================================================
+[2025-05-03T13:03:25.795+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.95s           2025-05-03T13:03:08                      12
+/opt/airflow/dags/main.py                                0           0  0.94s           2025-05-03T13:03:08                       3
+/opt/airflow/dags/reader.py                              0           0  0.66s           2025-05-03T13:03:09                       3
+================================================================================
+[2025-05-03T13:03:52.528+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-05-03T13:03:53.014+0000] {manager.py:824} INFO - There are 3 files in /opt/airflow/dags
+[2025-05-03T13:03:56.133+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.78s           2025-05-03T13:03:39                      12
+/opt/airflow/dags/main.py                                0           0  0.62s           2025-05-03T13:03:39                       3
+/opt/airflow/dags/reader.py                              0           0  0.38s           2025-05-03T13:03:40                       3
+================================================================================
+[2025-05-03T13:04:26.549+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.74s           2025-05-03T13:04:11                      12
+/opt/airflow/dags/main.py                                0           0  0.60s           2025-05-03T13:04:11                       3
+/opt/airflow/dags/reader.py                              0           0  0.48s           2025-05-03T13:04:11                       3
+================================================================================
+[2025-05-03T13:04:56.637+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.71s           2025-05-03T13:04:42                      12
+/opt/airflow/dags/main.py                                0           0  0.64s           2025-05-03T13:04:42                       3
+/opt/airflow/dags/reader.py                              0           0  0.48s           2025-05-03T13:04:42                       3
+================================================================================
+[2025-05-03T13:05:26.720+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  2.05s           2025-05-03T13:05:14                      12
+/opt/airflow/dags/main.py                                0           0  1.70s           2025-05-03T13:05:14                       3
+/opt/airflow/dags/reader.py                              0           0  0.45s           2025-05-03T13:05:15                       3
+================================================================================
+[2025-05-03T13:05:56.779+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.75s           2025-05-03T13:05:46                      12
+/opt/airflow/dags/main.py                                0           0  0.60s           2025-05-03T13:05:45                       3
+/opt/airflow/dags/reader.py                              0           0  0.46s           2025-05-03T13:05:46                       3
+================================================================================
+[2025-05-03T13:06:26.959+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.62s           2025-05-03T13:06:17                      12
+/opt/airflow/dags/main.py                                0           0  0.50s           2025-05-03T13:06:17                       3
+/opt/airflow/dags/reader.py                              0           0  0.39s           2025-05-03T13:06:17                       3
+================================================================================
+[2025-05-03T13:06:57.243+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.54s           2025-05-03T13:06:48                      12
+/opt/airflow/dags/main.py                                0           0  1.16s           2025-05-03T13:06:48                       3
+/opt/airflow/dags/reader.py                              0           0  0.48s           2025-05-03T13:06:49                       3
+================================================================================
+[2025-05-03T13:07:27.480+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.64s           2025-05-03T13:07:19                      12
+/opt/airflow/dags/main.py                                0           0  0.56s           2025-05-03T13:07:19                       3
+/opt/airflow/dags/reader.py                              0           0  0.47s           2025-05-03T13:07:19                       3
+================================================================================
+[2025-05-03T13:07:58.241+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.71s           2025-05-03T13:07:50                      12
+/opt/airflow/dags/main.py                                0           0  0.59s           2025-05-03T13:07:50                       3
+/opt/airflow/dags/reader.py                              0           0  0.45s           2025-05-03T13:07:51                       3
+================================================================================
+[2025-05-03T13:08:28.651+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.99s           2025-05-03T13:08:21                      12
+/opt/airflow/dags/main.py                                0           0  0.86s           2025-05-03T13:08:21                       3
+/opt/airflow/dags/reader.py                              0           0  0.57s           2025-05-03T13:08:22                       3
+================================================================================
+[2025-05-03T13:08:52.910+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-05-03T13:08:53.531+0000] {manager.py:824} INFO - There are 3 files in /opt/airflow/dags
+[2025-05-03T13:08:58.655+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.09s           2025-05-03T13:08:53                      12
+/opt/airflow/dags/main.py                                0           0  0.55s           2025-05-03T13:08:52                       3
+/opt/airflow/dags/reader.py                              0           0  0.40s           2025-05-03T13:08:52                       3
+================================================================================
+[2025-05-03T13:09:28.860+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/main.py                                0           0  0.74s           2025-05-03T13:09:23                       3
+/opt/airflow/dags/nashville.py                           1           0  0.67s           2025-05-03T13:09:24                      12
+/opt/airflow/dags/reader.py                              0           0  0.42s           2025-05-03T13:09:23                       3
+================================================================================
+[2025-05-03T13:09:59.659+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.71s           2025-05-03T13:09:55                      12
+/opt/airflow/dags/main.py                                0           0  0.54s           2025-05-03T13:09:54                       3
+/opt/airflow/dags/reader.py                              0           0  0.41s           2025-05-03T13:09:54                       3
+================================================================================
+[2025-05-03T13:10:29.715+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.74s           2025-05-03T13:10:26                      12
+/opt/airflow/dags/main.py                                0           0  0.68s           2025-05-03T13:10:25                       3
+/opt/airflow/dags/reader.py                              0           0  0.50s           2025-05-03T13:10:25                       3
+================================================================================
+[2025-05-03T13:10:59.816+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/main.py                                0           0  0.88s           2025-05-03T13:10:56                       3
+/opt/airflow/dags/nashville.py                           1           0  0.76s           2025-05-03T13:10:57                      12
+/opt/airflow/dags/reader.py                              0           0  0.56s           2025-05-03T13:10:56                       3
+================================================================================
+[2025-05-03T13:11:29.981+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  0.70s           2025-05-03T13:11:28                      12
+/opt/airflow/dags/main.py                                0           0  0.68s           2025-05-03T13:11:27                       3
+/opt/airflow/dags/reader.py                              0           0  0.50s           2025-05-03T13:11:27                       3
+================================================================================
+[2025-05-03T13:12:00.508+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/main.py                                0           0  0.67s           2025-05-03T13:11:58                       3
+/opt/airflow/dags/nashville.py                           1           0  0.66s           2025-05-03T13:11:59                      12
+/opt/airflow/dags/reader.py                              0           0  0.53s           2025-05-03T13:11:58                       3
+================================================================================
+[2025-05-03T13:12:31.434+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/main.py                                0           0  0.79s           2025-05-03T13:12:30                       3
+/opt/airflow/dags/nashville.py    390  1.26s             1           0  0.66s           2025-05-03T13:11:59                      12
+/opt/airflow/dags/reader.py                              0           0  0.59s           2025-05-03T13:12:30                       3
+================================================================================
+[2025-05-03T13:13:01.498+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.91s           2025-05-03T13:12:32                      12
+/opt/airflow/dags/main.py         398  1.11s             0           0  0.79s           2025-05-03T13:12:30                       3
+/opt/airflow/dags/reader.py                              0           0  0.49s           2025-05-03T13:13:00                       3
+================================================================================
+[2025-05-03T13:13:31.908+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.99s           2025-05-03T13:13:04                      12
+/opt/airflow/dags/main.py         410  0.02s             0           0  1.13s           2025-05-03T13:13:01                       3
+/opt/airflow/dags/reader.py       411  0.01s             0           0  0.49s           2025-05-03T13:13:00                       3
+================================================================================
+[2025-05-03T13:13:53.718+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-05-03T13:13:54.244+0000] {manager.py:824} INFO - There are 3 files in /opt/airflow/dags
+[2025-05-03T13:14:02.096+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.70s           2025-05-03T13:13:36                      12
+/opt/airflow/dags/main.py                                0           0  0.59s           2025-05-03T13:13:32                       3
+/opt/airflow/dags/reader.py                              0           0  0.43s           2025-05-03T13:13:32                       3
+================================================================================
+[2025-05-03T13:14:32.440+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/main.py                                0           0  1.32s           2025-05-03T13:14:04                       3
+/opt/airflow/dags/reader.py                              0           0  0.77s           2025-05-03T13:14:03                       3
+/opt/airflow/dags/nashville.py                           1           0  0.66s           2025-05-03T13:14:08                      12
+================================================================================
+[2025-05-03T13:15:03.189+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.04s           2025-05-03T13:14:40                      12
+/opt/airflow/dags/main.py                                0           0  0.45s           2025-05-03T13:14:35                       3
+/opt/airflow/dags/reader.py                              0           0  0.34s           2025-05-03T13:14:34                       3
+================================================================================
+[2025-05-03T13:15:33.280+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.33s           2025-05-03T13:15:12                      12
+/opt/airflow/dags/main.py                                0           0  0.47s           2025-05-03T13:15:05                       3
+/opt/airflow/dags/reader.py                              0           0  0.35s           2025-05-03T13:15:05                       3
+================================================================================
+[2025-05-03T13:16:03.477+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.93s           2025-05-03T13:15:44                      12
+/opt/airflow/dags/main.py                                0           0  0.78s           2025-05-03T13:15:36                       3
+/opt/airflow/dags/reader.py                              0           0  0.55s           2025-05-03T13:15:36                       3
+================================================================================
+[2025-05-03T13:16:33.741+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.59s           2025-05-03T13:16:16                      12
+/opt/airflow/dags/main.py                                0           0  1.03s           2025-05-03T13:16:09                       3
+/opt/airflow/dags/reader.py                              0           0  0.93s           2025-05-03T13:16:08                       3
+================================================================================
+[2025-05-03T13:17:03.870+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  2.63s           2025-05-03T13:16:48                      12
+/opt/airflow/dags/main.py                                0           0  1.17s           2025-05-03T13:16:41                       3
+/opt/airflow/dags/reader.py                              0           0  0.73s           2025-05-03T13:16:40                       3
+================================================================================
+[2025-05-03T13:17:34.451+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.02s           2025-05-03T13:17:20                      12
+/opt/airflow/dags/main.py                                0           0  0.68s           2025-05-03T13:17:12                       3
+/opt/airflow/dags/reader.py                              0           0  0.53s           2025-05-03T13:17:11                       3
+================================================================================
+[2025-05-03T13:18:04.501+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/main.py                                0           0  1.42s           2025-05-03T13:17:44                       3
+/opt/airflow/dags/nashville.py                           1           0  0.79s           2025-05-03T13:17:51                      12
+/opt/airflow/dags/reader.py                              0           0  0.74s           2025-05-03T13:17:43                       3
+================================================================================
+[2025-05-03T13:18:34.580+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.14s           2025-05-03T13:18:22                      12
+/opt/airflow/dags/reader.py                              0           0  0.92s           2025-05-03T13:18:15                       3
+/opt/airflow/dags/main.py                                0           0  0.81s           2025-05-03T13:18:15                       3
+================================================================================
+[2025-05-03T13:18:53.798+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-05-03T13:18:54.851+0000] {manager.py:824} INFO - There are 3 files in /opt/airflow/dags
+[2025-05-03T13:19:05.427+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  2.33s           2025-05-03T13:18:55                      12
+/opt/airflow/dags/main.py                                0           0  0.70s           2025-05-03T13:18:46                       3
+/opt/airflow/dags/reader.py                              0           0  0.47s           2025-05-03T13:18:46                       3
+================================================================================
+[2025-05-03T13:19:35.544+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.56s           2025-05-03T13:19:26                      12
+/opt/airflow/dags/main.py                                0           0  0.72s           2025-05-03T13:19:18                       3
+/opt/airflow/dags/reader.py                              0           0  0.53s           2025-05-03T13:19:17                       3
+================================================================================
+[2025-05-03T13:20:05.572+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/main.py                                0           0  0.98s           2025-05-03T13:19:49                       3
+/opt/airflow/dags/nashville.py                           1           0  0.89s           2025-05-03T13:19:58                      12
+/opt/airflow/dags/reader.py                              0           0  0.57s           2025-05-03T13:19:49                       3
+================================================================================
+[2025-05-03T13:20:36.206+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/nashville.py                           1           0  1.08s           2025-05-03T13:20:29                      12
+/opt/airflow/dags/main.py                                0           0  0.87s           2025-05-03T13:20:21                       3
+/opt/airflow/dags/reader.py                              0           0  0.76s           2025-05-03T13:20:20                       3
+================================================================================
+[2025-05-03T13:21:06.436+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/main.py                                0           0  0.91s           2025-05-03T13:20:52                       3
+/opt/airflow/dags/nashville.py                           1           0  0.85s           2025-05-03T13:21:01                      12
+/opt/airflow/dags/reader.py                              0           0  0.58s           2025-05-03T13:20:52                       3
+================================================================================

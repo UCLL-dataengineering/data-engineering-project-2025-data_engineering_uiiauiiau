@@ -213,3 +213,8 @@
 [2025-05-03T13:20:51.736+0000] {logging_mixin.py:190} INFO - [2025-05-03T13:20:51.735+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/reader.py
 [2025-05-03T13:20:52.211+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/reader.py
 [2025-05-03T13:20:52.250+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/reader.py took 0.538 seconds
+[2025-05-03T13:21:22.782+0000] {processor.py:186} INFO - Started process (PID=591) to work on /opt/airflow/dags/reader.py
+[2025-05-03T13:21:22.784+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/reader.py for tasks to queue
+[2025-05-03T13:21:22.788+0000] {logging_mixin.py:190} INFO - [2025-05-03T13:21:22.787+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/reader.py
+[2025-05-03T13:21:23.328+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/reader.py
+[2025-05-03T13:21:23.343+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/reader.py took 0.571 seconds

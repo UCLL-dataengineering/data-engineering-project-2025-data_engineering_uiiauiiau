@@ -292,3 +292,17 @@
 [2025-05-03T13:20:29.899+0000] {logging_mixin.py:190} INFO - [2025-05-03T13:20:29.898+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-05-03T13:20:29.929+0000] {logging_mixin.py:190} INFO - [2025-05-03T13:20:29.929+0000] {dag.py:4180} INFO - Setting next_dagrun for nashville_data to 2025-05-03 13:20:00+00:00, run_after=2025-05-03 13:25:00+00:00
 [2025-05-03T13:20:29.953+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/nashville.py took 1.005 seconds
+[2025-05-03T13:21:00.534+0000] {processor.py:186} INFO - Started process (PID=589) to work on /opt/airflow/dags/nashville.py
+[2025-05-03T13:21:00.536+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/nashville.py for tasks to queue
+[2025-05-03T13:21:00.541+0000] {logging_mixin.py:190} INFO - [2025-05-03T13:21:00.540+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/nashville.py
+[2025-05-03T13:21:01.238+0000] {processor.py:925} INFO - DAG(s) 'nashville_data' retrieved from /opt/airflow/dags/nashville.py
+[2025-05-03T13:21:01.271+0000] {logging_mixin.py:190} INFO - [2025-05-03T13:21:01.271+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-03T13:21:01.305+0000] {logging_mixin.py:190} INFO - [2025-05-03T13:21:01.305+0000] {dag.py:4180} INFO - Setting next_dagrun for nashville_data to 2025-05-03 13:20:00+00:00, run_after=2025-05-03 13:25:00+00:00
+[2025-05-03T13:21:01.331+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/nashville.py took 0.805 seconds
+[2025-05-03T13:21:31.698+0000] {processor.py:186} INFO - Started process (PID=601) to work on /opt/airflow/dags/nashville.py
+[2025-05-03T13:21:31.699+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/nashville.py for tasks to queue
+[2025-05-03T13:21:31.702+0000] {logging_mixin.py:190} INFO - [2025-05-03T13:21:31.702+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/nashville.py
+[2025-05-03T13:21:32.302+0000] {processor.py:925} INFO - DAG(s) 'nashville_data' retrieved from /opt/airflow/dags/nashville.py
+[2025-05-03T13:21:32.331+0000] {logging_mixin.py:190} INFO - [2025-05-03T13:21:32.331+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-03T13:21:32.362+0000] {logging_mixin.py:190} INFO - [2025-05-03T13:21:32.362+0000] {dag.py:4180} INFO - Setting next_dagrun for nashville_data to 2025-05-03 13:20:00+00:00, run_after=2025-05-03 13:25:00+00:00
+[2025-05-03T13:21:32.386+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/nashville.py took 0.696 seconds
