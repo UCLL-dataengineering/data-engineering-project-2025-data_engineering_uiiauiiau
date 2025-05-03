@@ -1,0 +1,108 @@
+[2025-05-02T15:30:01.763+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-02T15:30:01.779+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nashville_data.process_task scheduled__2025-05-02T15:25:00+00:00 [queued]>
+[2025-05-02T15:30:01.787+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nashville_data.process_task scheduled__2025-05-02T15:25:00+00:00 [queued]>
+[2025-05-02T15:30:01.788+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-05-02T15:30:01.798+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): process_task> on 2025-05-02 15:25:00+00:00
+[2025-05-02T15:30:01.805+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1588) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-02T15:30:01.807+0000] {standard_task_runner.py:72} INFO - Started process 1590 to run task
+[2025-05-02T15:30:01.807+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'nashville_data', 'process_task', 'scheduled__2025-05-02T15:25:00+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/nashville.py', '--cfg-path', '/tmp/tmpbcthu8lw']
+[2025-05-02T15:30:01.809+0000] {standard_task_runner.py:105} INFO - Job 37: Subtask process_task
+[2025-05-02T15:30:01.847+0000] {task_command.py:467} INFO - Running <TaskInstance: nashville_data.process_task scheduled__2025-05-02T15:25:00+00:00 [running]> on host 1a092ad7d767
+[2025-05-02T15:30:01.904+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='nashville_data' AIRFLOW_CTX_TASK_ID='process_task' AIRFLOW_CTX_EXECUTION_DATE='2025-05-02T15:25:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-02T15:25:00+00:00'
+[2025-05-02T15:30:01.905+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-02T15:30:12.544+0000] {logging_mixin.py:190} INFO - Validation Summary:
+[2025-05-02T15:30:12.545+0000] {logging_mixin.py:190} INFO - {'total_records': 56636, 'valid_records': 23985, 'invalid_records': 32651, 'error_count': 317574}
+[2025-05-02T15:30:12.546+0000] {logging_mixin.py:190} INFO - 
+Sample validation errors (first 10):
+[2025-05-02T15:30:12.547+0000] {logging_mixin.py:190} INFO - Record 0: Mandatory field 'Acreage' is missing or empty
+[2025-05-02T15:30:12.549+0000] {logging_mixin.py:190} INFO - Record 0: Mandatory field 'Neighborhood' is missing or empty
+[2025-05-02T15:30:12.550+0000] {logging_mixin.py:190} INFO - Record 0: Mandatory field 'Land Value' is missing or empty
+[2025-05-02T15:30:12.551+0000] {logging_mixin.py:190} INFO - Record 0: Mandatory field 'Building Value' is missing or empty
+[2025-05-02T15:30:12.551+0000] {logging_mixin.py:190} INFO - Record 0: Mandatory field 'Total Value' is missing or empty
+[2025-05-02T15:30:12.552+0000] {logging_mixin.py:190} INFO - Record 0: Mandatory field 'Finished Area' is missing or empty
+[2025-05-02T15:30:12.552+0000] {logging_mixin.py:190} INFO - Record 0: Mandatory field 'Year Built' is missing or empty
+[2025-05-02T15:30:12.553+0000] {logging_mixin.py:190} INFO - Record 0: Mandatory field 'Bedrooms' is missing or empty
+[2025-05-02T15:30:12.554+0000] {logging_mixin.py:190} INFO - Record 0: Mandatory field 'Full Bath' is missing or empty
+[2025-05-02T15:30:12.555+0000] {logging_mixin.py:190} INFO - Record 0: Mandatory field 'Half Bath' is missing or empty
+[2025-05-02T15:30:12.556+0000] {logging_mixin.py:190} INFO - ...and 317564 more errors
+[2025-05-02T15:30:14.325+0000] {logging_mixin.py:190} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 24012 entries, 0 to 24011
+Data columns (total 36 columns):
+ #   Column                  Non-Null Count  Dtype         
+---  ------                  --------------  -----         
+ 0   Unnamed: 0.1            24012 non-null  int64         
+ 1   Unnamed: 0              24012 non-null  int64         
+ 2   Parcel ID               24012 non-null  object        
+ 3   Land Use                24012 non-null  object        
+ 4   Property Address        24012 non-null  object        
+ 5   Suite/ Condo   #        2 non-null      object        
+ 6   Property City           24012 non-null  object        
+ 7   Sale Date               24012 non-null  datetime64[ns]
+ 8   Sale Price              24012 non-null  int64         
+ 9   Legal Reference         24012 non-null  object        
+ 10  Owner Name              23722 non-null  object        
+ 11  Address                 24012 non-null  object        
+ 12  City                    24012 non-null  object        
+ 13  State                   24012 non-null  object        
+ 14  Acreage                 24012 non-null  float64       
+ 15  Tax District            24012 non-null  object        
+ 16  Neighborhood            24012 non-null  float64       
+ 17  Land Value              24012 non-null  float64       
+ 18  Building Value          24012 non-null  float64       
+ 19  Total Value             24012 non-null  float64       
+ 20  Finished Area           24012 non-null  float64       
+ 21  Foundation Type         24011 non-null  object        
+ 22  Year Built              24012 non-null  float64       
+ 23  Exterior Wall           24012 non-null  object        
+ 24  Grade                   24012 non-null  object        
+ 25  Bedrooms                24012 non-null  float64       
+ 26  Full Bath               24012 non-null  float64       
+ 27  Half Bath               24012 non-null  float64       
+ 28  Price per Square Foot   24012 non-null  float64       
+ 29  Property Age            24012 non-null  float64       
+ 30  Sale Year               24012 non-null  int32         
+ 31  Sale Month              24012 non-null  int32         
+ 32  Land-to-Building Ratio  24012 non-null  float64       
+ 33  Sale Price Category     24012 non-null  object        
+ 34  Family Name             23722 non-null  object        
+ 35  First Name              23608 non-null  object        
+dtypes: datetime64[ns](1), float64(13), int32(2), int64(3), object(17)
+memory usage: 6.4+ MB
+[2025-05-02T15:30:14.326+0000] {logging_mixin.py:190} INFO - None
+[2025-05-02T15:30:14.332+0000] {logging_mixin.py:190} INFO - Backup Validation Summary:
+[2025-05-02T15:30:14.333+0000] {logging_mixin.py:190} INFO - {'total_records': 24012, 'valid_records': 24012, 'flagged_records': 0, 'flag_count': 0}
+[2025-05-02T15:30:15.143+0000] {_universal.py:506} INFO - Request URL: 'https://uiiauiiau.blob.core.windows.net/nashville/processed_nashville_housing.csv'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '8222910'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.24.1 Python/3.12.9 (Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.36)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5863bd1c-276a-11f0-8d7a-0242ac130004'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2025-05-02T15:30:19.999+0000] {_universal.py:545} INFO - Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Fri, 02 May 2025 15:30:19 GMT'
+    'ETag': '"0x8DD898E3F7C0FD7"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '95bbd392-d01e-000e-5377-bbeb93000000'
+    'x-ms-client-request-id': '5863bd1c-276a-11f0-8d7a-0242ac130004'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Fri, 02 May 2025 15:30:19 GMT'
+[2025-05-02T15:30:20.004+0000] {logging_mixin.py:190} INFO - ☁️ Uploaded to Azure Blob Storage: nashville/processed_nashville_housing.csv
+[2025-05-02T15:30:20.017+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-02T15:30:20.025+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-02T15:30:20.026+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=nashville_data, task_id=process_task, run_id=scheduled__2025-05-02T15:25:00+00:00, execution_date=20250502T152500, start_date=20250502T153001, end_date=20250502T153020
+[2025-05-02T15:30:20.076+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-02T15:30:20.085+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-02T15:30:20.087+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
