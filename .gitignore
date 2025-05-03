@@ -1,1 +1,6 @@
-/airflow
+.gitignore
+/Nashville Batch Processing/dags
+/Nashville Batch Processing/logs
+/Nashville Batch Processing/plugins
+/Nashville Batch Processing/config
+/Nashville Batch Processing/docker-compose.yaml

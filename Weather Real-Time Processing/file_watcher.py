@@ -4,7 +4,8 @@ import logging
 import pandas as pd
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-from reader import Reader
+
+from main import main
 
 # Set up logging
 logging.basicConfig(
@@ -24,6 +25,8 @@ class FileWatcher(FileSystemEventHandler):
             
         # Add to detected files set
         self.detected_files.add(file_path)
+        
+        main()
         
         logger.info(f"  > {file_path}")
         time.sleep(2)
